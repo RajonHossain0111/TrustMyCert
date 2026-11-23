@@ -17,7 +17,7 @@ namespace config {
 
 // Verbose diagnostics (extra per-library / per-symbol lines). Gated to avoid
 // log spam; hot-path wrappers additionally rate-limit themselves.
-inline constexpr bool kVerbose = false;
+inline constexpr bool kVerbose = true;
 
 // Master switches for each subsystem.
 inline constexpr bool kEnableDiscovery = true;
@@ -29,12 +29,12 @@ inline constexpr bool kEnableNativeHooks = true;
 // release build; only for controlled tests against apps you own or are
 // explicitly authorized to assess, using test certificates and a controlled
 // test server.
-inline constexpr bool kEnableBypass = false;
+inline constexpr bool kEnableBypass = true;
 
 // Second, independent build-time gate for runtime (`bypass=1`) activation.
 // Even with kEnableBypass=true, a runtime config cannot enable bypass unless
 // this is also true. Keep false for any distributed build.
-inline constexpr bool kAllowRuntimeBypass = false;
+inline constexpr bool kAllowRuntimeBypass = true;
 
 // Max libraries / symbols reported in detail when verbose.
 inline constexpr std::size_t kMaxLibsLogged = 64;
