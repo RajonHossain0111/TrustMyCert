@@ -33,7 +33,7 @@ inline constexpr bool kEnableBypass = true;
 
 // Second, independent build-time gate for runtime (`bypass=1`) activation.
 // Even with kEnableBypass=true, a runtime config cannot enable bypass unless
-// this is also true. Keep false for any distributed build.
+// this is also true. Shipped builds keep it true; bypass still needs runtime bypass=1.
 inline constexpr bool kAllowRuntimeBypass = true;
 
 // Max libraries / symbols reported in detail when verbose.
